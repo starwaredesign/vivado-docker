@@ -1,10 +1,10 @@
 # vivado-docker
 
-Vivado installed into a docker image for CI purposes.
+Vivado and Petalinux installed into a docker image for CI purposes.
 
 ## Build instructions
 
-1. This docker file assumes the Vivado download is available on a webserver somewhere. This can easily be the build machine using the webserver in Python.
+1. This docker file assumes the Vivado and Petalinux download are available on a webserver somewhere. This can easily be the build machine using the webserver in Python.
     ```shell
     cd /path/to/Vivado/download
     python -m http.server
@@ -13,7 +13,7 @@ Vivado installed into a docker image for CI purposes.
 3. Potentialy modify the `install_config.txt` to change the install options.
 4. Build the image (will take about 10 minutes) passing in a build arg
     ```shell
-    docker build --build-arg VIVADO_TAR_HOST=host_ip:8000 --build-arg VIVADO_TAR_FILE=Xilinx_Vivado_SDK_2016.3_1011_1 -t vivado:2016.3 .
+    docker build --build-arg VIVADO_TAR_HOST=192.168.1.219:8000 --build-arg VIVADO_TAR_FILE=Xilinx_Unified_2022.2_1014_8888 -t xilinx:2022.2 --build-arg VIVADO_VERSION=2022.2 --build-arg PETALINUX_VERSION=10141622 .
     ```
 
 ## Running

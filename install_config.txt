@@ -1,18 +1,20 @@
-#### Vivado HL WebPACK Install Configuration ####
-Edition=Vivado HL WebPACK
+#### Vivado ML Standard Install Configuration ####
+Edition=Vivado ML Standard
+
+Product=Vivado
 
 # Path where Xilinx software will be installed.
 Destination=/opt/Xilinx
 
 # Choose the Products/Devices the you would like to install.
-Modules=Software Development Kit (SDK):0,DocNav:0,Kintex UltraScale:0,Zynq-7000:1,System Generator for DSP:0,Artix-7:1,Kintex-7:0
+Modules=Virtex UltraScale+ HBM:0,DocNav:1,Kintex UltraScale:0,Artix UltraScale+:0,Spartan-7:0,Artix-7:0,Virtex UltraScale+:0,Vitis Model Composer(Xilinx Toolbox for MATLAB and Simulink. Includes the functionality of System Generator for DSP):0,Zynq UltraScale+ MPSoC:1,Zynq-7000:1,Virtex UltraScale+ 58G:0,Kintex-7:0,Install Devices for Kria SOMs and Starter Kits:1,Kintex UltraScale+:0
 
 # Choose the post install scripts you'd like to run as part of the finalization step. Please note that some of these scripts may require user interaction during runtime.
-InstallOptions=Acquire or Manage a License Key:0,Enable WebTalk for SDK to send usage statistics to Xilinx:0
+InstallOptions=
 
 ## Shortcuts and File associations ##
 # Choose whether Start menu/Application menu shortcuts will be created or not.
-CreateProgramGroupShortcuts=0
+CreateProgramGroupShortcuts=1
 
 # Choose the name of the Start menu/Application menu shortcut. This setting will be ignored if you choose NOT to create shortcuts.
 ProgramGroupFolder=Xilinx Design Tools
@@ -21,7 +23,11 @@ ProgramGroupFolder=Xilinx Design Tools
 CreateShortcutsForAllUsers=0
 
 # Choose whether shortcuts will be created on the desktop or not.
-CreateDesktopShortcuts=0
+CreateDesktopShortcuts=1
 
 # Choose whether file associations will be created or not.
-CreateFileAssociation=0
+CreateFileAssociation=1
+
+# Choose whether disk usage will be optimized (reduced) after installation
+EnableDiskUsageOptimization=1
+
