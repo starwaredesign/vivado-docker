@@ -114,4 +114,5 @@ RUN echo "source /opt/Xilinx/Vivado/${VIVADO_VERSION}/settings64.sh" >> /root/.p
 RUN mkdir -p /root/.Xilinx
 #COPY Xilinx.lic /root/.Xilinx/
 
+USER xilinx
 
