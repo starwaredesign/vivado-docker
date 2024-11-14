@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
 # based on Dockerfile from Colm Ryan <cryan@bbn.com>
 MAINTAINER Matteo Vit <matteo.vit@dev.starwaredesign.com> 
@@ -26,7 +26,6 @@ RUN apt-get update && apt-get install -y \
   gawk \
   iproute2 \
   python3 \ 
-  python \
   gcc \
   make \
   net-tools \ 
@@ -49,6 +48,9 @@ RUN apt-get update && apt-get install -y \
   texinfo \
   gcc-multilib \
   zlib1g:i386 \
+  lsb-release \
+  libtinfo5 \
+  dnsutils \
   bc \
   unzip 
 
@@ -101,7 +103,7 @@ RUN echo "Downloading ${PETALINUX_FILE} from ${VIVADO_TAR_HOST}" && \
   wget ${VIVADO_TAR_HOST}/${PETALINUX_FILE} -q && \
   chmod a+x ${PETALINUX_FILE} && \
   mkdir -p /home/xilinx/petalinux && \
-  SKIP_LICENSE=y ./${PETALINUX_FILE} --dir /home/xilinx/petalinux/${VIVADO_VERSION} --platform "arm aarch64" && \
+  ./${PETALINUX_FILE} -y --dir /home/xilinx/petalinux/${VIVADO_VERSION} --platform "arm aarch64" && \
   rm -rf ${PETALINUX_FILE}
 
 RUN echo "source /home/xilinx/petalinux/${VIVADO_VERSION}/settings.sh" >> /home/xilinx/.profile
