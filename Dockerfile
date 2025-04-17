@@ -122,4 +122,5 @@ USER xilinx
 # install cocotb
 pip install cocotb
 pip install cocotb-bus
+pip install pytest
 
