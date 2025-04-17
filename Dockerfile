@@ -52,7 +52,8 @@ RUN apt-get update && apt-get install -y \
   libtinfo5 \
   dnsutils \
   bc \
-  unzip 
+  unzip \
+  iverilog 
 
 
 # copy in config file
@@ -117,4 +118,8 @@ RUN mkdir -p /root/.Xilinx
 #COPY Xilinx.lic /root/.Xilinx/
 
 USER xilinx
+
+# install cocotb
+pip install cocotb
+pip install cocotb-bus
 
