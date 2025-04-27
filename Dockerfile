@@ -53,7 +53,8 @@ RUN apt-get update && apt-get install -y \
   dnsutils \
   bc \
   unzip \
-  iverilog 
+  iverilog \
+  python3-pip
 
 
 # copy in config file
@@ -120,7 +121,7 @@ RUN mkdir -p /root/.Xilinx
 USER xilinx
 
 # install cocotb
-pip install cocotb
-pip install cocotb-bus
-pip install pytest
+RUN pip install cocotb
+RUN pip install cocotb-bus
+RUN pip install pytest
 
