@@ -125,3 +125,6 @@ RUN pip install cocotb
 RUN pip install cocotb-bus
 RUN pip install pytest
 
+RUN echo 'export PATH="$PATH:~/.local/bin"' >> /home/xilinx/.bashrc
+RUN echo "source /opt/Xilinx/Vivado/${VIVADO_VERSION}/settings64.sh" >> /home/xilinx/.bashrc 
+RUN echo "source /home/xilinx/petalinux/${VIVADO_VERSION}/settings.sh" >> /home/xilinx/.bashrc
